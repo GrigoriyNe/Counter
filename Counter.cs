@@ -35,11 +35,12 @@ public class Counter : MonoBehaviour
 
     private IEnumerator IncreaseValue()
     {
+        var wait = new WaitForSecondsRealtime(_delay);
+
         while (enabled)
         {
             _currentValue += 1;
             Changed();
-            var wait = new WaitForSecondsRealtime(_delay);
 
             yield return wait;
         }
